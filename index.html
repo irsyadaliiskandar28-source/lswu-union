@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSWU — Los Santos Workers Union</title>
+<meta name="description" content="Los Santos Workers Union (LSWU) — komunitas yang menjadi wadah bagi para pekerja dan warga untuk membangun kerja sama serta berkembang bersama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 100 100" fill="none">
+        <path d="M50 4 L90 27 L90 73 L50 96 L10 73 L10 27 Z" fill="#1f3b52" stroke="#f4b73c" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="50" cy="50" r="31" stroke="#54606c" stroke-width="1.2"/>
+        <text x="50" y="42" text-anchor="middle" font-family="Oswald, sans-serif" font-size="18" letter-spacing="1" fill="#faf6ec" font-weight="700">LS</text>
+        <g stroke="#e8792f" stroke-width="3" stroke-linecap="round">
+          <line x1="34" y1="58" x2="52" y2="76"/>
+          <line x1="66" y1="58" x2="48" y2="76"/>
+        </g>
+        <rect x="30.5" y="53.5" width="8" height="8" rx="1.5" fill="#e8792f" transform="rotate(-45 34.5 57.5)"/>
+        <circle cx="66" cy="58" r="5" fill="none" stroke="#e8792f" stroke-width="2.6"/>
+      </svg>
+      <div class="brand-text">LSWU<span>Los Santos Workers Union</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="about.html">Tentang</a></li>
+      <li><a href="activities.html">Kegiatan</a></li>
+      <li><a href="organization.html">Organisasi</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="news.html">Berita</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+    </ul>
+    <a href="https://discord.gg/83dWM9myWm" target="_blank" rel="noopener noreferrer" class="nav-cta">
+      Gabung Discord
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button class="burger" id="burgerBtn" aria-label="Buka menu navigasi" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Local Community &middot; Los Santos</div>
+        <h1>LOS SANTOS<br>WORKERS <em>UNION</em></h1>
+        <div class="hero-sub">Bersatu Bekerja. Kuat Bersama.</div>
+        <p class="lead">LSWU adalah komunitas yang menjadi wadah bagi para pekerja dan warga Los Santos untuk membangun kerja sama, komunikasi, dan berkembang bersama.</p>
+        <div class="hero-actions">
+          <a href="about.html" class="btn btn-primary">Tentang Kami</a>
+          <a href="https://discord.gg/83dWM9myWm" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            Gabung Discord
+            <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="seal-wrap">
+        <svg class="seal" viewBox="0 0 300 300" fill="none">
+          <circle cx="150" cy="150" r="140" stroke="#b9ab84" stroke-width="2"/>
+          <circle cx="150" cy="150" r="118" stroke="#f4b73c" stroke-width="2" stroke-dasharray="4 7"/>
+          <g fill="none" stroke="#54606c" stroke-width="1.5">
+            <path d="M150 22 v26 M150 252 v26 M22 150 h26 M252 150 h26"/>
+            <path d="M56 56 l18 18 M226 56 l-18 18 M56 244 l18 -18 M226 244 l-18 -18"/>
+          </g>
+          <circle cx="150" cy="150" r="86" fill="#1f3b52" stroke="#28495f" stroke-width="1"/>
+          <g transform="translate(150,110)">
+            <rect x="-4" y="-25" width="8" height="50" rx="4" fill="#f4b73c" transform="rotate(45)"/>
+            <rect x="-4" y="-25" width="8" height="50" rx="4" fill="#e8792f" transform="rotate(-45)"/>
+            <circle cx="0" cy="0" r="7" fill="#1f3b52" stroke="#8b98a3" stroke-width="2"/>
+          </g>
+          <text x="150" y="152" text-anchor="middle" font-family="Oswald, sans-serif" font-size="28" letter-spacing="2" fill="#faf6ec" font-weight="600">LSWU</text>
+          <text x="150" y="175" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="3" fill="#f4b73c">EST. 2026</text>
+          <text x="150" y="193" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" fill="#b9c2ca">LOCAL NO. 001</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section-paper">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow on-paper">Apa itu LSWU</div>
+        <h2>Wadah Bagi Pekerja &amp; Warga</h2>
+        <p>Los Santos Workers Union bertujuan menjadi wadah bagi para pekerja dan warga dalam membangun hubungan, kerja sama, serta partisipasi dalam komunitas.</p>
+      </div>
+      <div class="card-grid">
+        <div class="task-card reveal">
+          <svg class="task-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="14" cy="14" r="6"/><circle cx="27" cy="14" r="6"/>
+            <path d="M6 33c0-6 4-10 8-10s8 4 8 10M19 33c0-6 4-10 8-10s8 4 8 10"/>
+          </svg>
+          <h3>Community</h3>
+          <p>Membangun komunitas dan hubungan antaranggota.</p>
+        </div>
+        <div class="task-card reveal">
+          <svg class="task-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 20l10-10 6 6 6-6 10 10"/>
+            <path d="M12 22l4 4 4-4 4 4 4-4"/>
+          </svg>
+          <h3>Collaboration</h3>
+          <p>Membangun kerja sama dengan komunitas dan organisasi.</p>
+        </div>
+        <div class="task-card reveal">
+          <svg class="task-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 16v8l7 2V14z"/><path d="M13 14l16-6v24l-16-6"/>
+            <path d="M10 26l2 8"/>
+          </svg>
+          <h3>Aspiration</h3>
+          <p>Menjadi wadah untuk aspirasi dan ide anggota.</p>
+        </div>
+        <div class="task-card reveal">
+          <svg class="task-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="6" y="9" width="28" height="24" rx="1"/>
+            <path d="M6 16h28M13 5v8M27 5v8"/>
+            <path d="M13 22h4M22 22h5M13 27h4"/>
+          </svg>
+          <h3>Activities</h3>
+          <p>Mengadakan berbagai kegiatan komunitas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hazard-divider" role="presentation"></div>
+
+  <!-- QUICK LINKS TO OTHER PAGES -->
+  <section class="section-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Jelajahi LSWU</div>
+        <h2>Semua Informasi LSWU</h2>
+        <p>Setiap bagian komunitas punya halamannya sendiri &mdash; mulai dari siapa kami, kegiatan, struktur organisasi, hingga kabar terbaru.</p>
+      </div>
+      <div class="quick-grid">
+
+        <a href="about.html" class="quick-card reveal">
+          <div class="num">01 &mdash; Profil</div>
+          <h3>About Us</h3>
+          <p>Kenali siapa LSWU, visi, dan misi komunitas.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="activities.html" class="quick-card reveal">
+          <div class="num">02 &mdash; Kegiatan</div>
+          <h3>Our Activities</h3>
+          <p>Gathering, diskusi, kolaborasi, dan event komunitas.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="organization.html" class="quick-card reveal">
+          <div class="num">03 &mdash; Struktur</div>
+          <h3>Organization</h3>
+          <p>Susunan pengurus yang menjalankan LSWU.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="partnership.html" class="quick-card reveal">
+          <div class="num">04 &mdash; Kerja Sama</div>
+          <h3>Partnership</h3>
+          <p>Komunitas dan organisasi yang bekerja sama dengan LSWU.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="news.html" class="quick-card reveal">
+          <div class="num">05 &mdash; Kabar</div>
+          <h3>News &amp; Updates</h3>
+          <p>Pengumuman resmi dan perkembangan komunitas.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+        <a href="contact.html" class="quick-card reveal">
+          <div class="num">06 &mdash; Gabung</div>
+          <h3>Contact &amp; Join</h3>
+          <p>Cara menjadi bagian dari LSWU lewat Discord resmi.</p>
+          <span class="go">Baca selengkapnya
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section class="join-band">
+    <div class="wrap">
+      <h2>Join Our Community</h2>
+      <p>Tertarik menjadi bagian dari Los Santos Workers Union? Gabung ke Discord resmi kami dan terhubung dengan anggota lainnya.</p>
+      <a href="https://discord.gg/83dWM9myWm" target="_blank" rel="noopener noreferrer" class="btn btn-discord">
+        Join Discord
+        <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Los Santos Workers Union</h3>
+        <p>Komunitas yang dibangun di atas kerja sama, partisipasi, dan solidaritas antarwarga.</p>
+      </div>
+      <div class="footer-links">
+        <div class="col">
+          <div class="label">Navigasi</div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="activities.html">Activities</a>
+        </div>
+        <div class="col">
+          <div class="label">Informasi</div>
+          <a href="organization.html">Organization</a>
+          <a href="partnership.html">Partnership</a>
+          <a href="news.html">News</a>
+        </div>
+        <div class="col">
+          <div class="label">Komunitas</div>
+          <a href="contact.html">Contact</a>
+          <a href="https://discord.gg/83dWM9myWm" target="_blank" rel="noopener noreferrer">Join Discord</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Los Santos Workers Union &mdash; All Rights Reserved.</span>
+      <span>Local No. 001 &middot; Los Santos</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
