@@ -64,13 +64,25 @@
   <section class="section-dark">
     <div class="wrap">
       <div class="news-grid">
-        <article class="notice reveal">
+        <article class="notice reveal detail-trigger" tabindex="0" role="button"
+          data-eyebrow="Pengumuman Resmi" data-title="LSWU Officially Opens"
+          data-meta1-label="Tanggal" data-meta1-value="01 September 2026"
+          data-meta2-label="Status" data-meta2-value="Resmi"
+          data-body="Los Santos Workers Union resmi memulai kegiatan operasionalnya mulai 1 September 2026. Peluncuran ini menandai dimulainya berbagai program kerja, kegiatan komunitas, dan struktur organisasi yang telah dipersiapkan sejak awal pembentukan LSWU."
+          data-list-label="Sorotan"
+          data-list="Peluncuran resmi struktur organisasi|Pembukaan pendaftaran member pertama|Dimulainya jadwal kegiatan rutin komunitas">
           <div class="stamp">Resmi</div>
           <div class="date">01 September 2026</div>
           <h3>LSWU Officially Opens</h3>
           <p>Los Santos Workers Union resmi memulai kegiatan operasionalnya mulai 1 September 2026.</p>
         </article>
-        <article class="notice reveal">
+        <article class="notice reveal detail-trigger" tabindex="0" role="button"
+          data-eyebrow="Pengumuman Resmi" data-title="Member Recruitment"
+          data-meta1-label="Status" data-meta1-value="Pendaftaran Dibuka"
+          data-meta2-label="Kategori" data-meta2-value="Recruitment"
+          data-body="LSWU membuka kesempatan bagi warga yang ingin menjadi bagian dari komunitas. Pendaftaran terbuka untuk siapa saja yang ingin berpartisipasi aktif dalam kegiatan dan struktur organisasi LSWU."
+          data-list-label="Sorotan"
+          data-list="Pendaftaran terbuka untuk seluruh warga|Proses seleksi dilakukan secara transparan|Member baru dapat langsung mengikuti kegiatan">
           <div class="stamp">Baru</div>
           <div class="date">Pendaftaran Dibuka</div>
           <h3>Member Recruitment</h3>
@@ -99,6 +111,32 @@
   </section>
 
 </main>
+
+<div class="detail-modal" id="detailModal" aria-hidden="true">
+  <div class="detail-modal-backdrop" data-close></div>
+  <div class="detail-modal-panel" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <button class="detail-modal-close" data-close aria-label="Tutup detail">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="detail-modal-eyebrow" id="detailModalEyebrow"></div>
+    <h3 id="detailModalTitle"></h3>
+    <div class="detail-modal-meta">
+      <div id="detailModalMeta1">
+        <span id="detailModalMeta1Label"></span>
+        <strong id="detailModalMeta1Value"></strong>
+      </div>
+      <div id="detailModalMeta2">
+        <span id="detailModalMeta2Label"></span>
+        <strong id="detailModalMeta2Value"></strong>
+      </div>
+    </div>
+    <p id="detailModalBody"></p>
+    <div class="detail-modal-list" id="detailModalListWrap">
+      <span class="detail-modal-list-label" id="detailModalListLabel"></span>
+      <ul id="detailModalList"></ul>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
