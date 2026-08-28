@@ -52,59 +52,84 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBar();
   }
 
-  // Organization page — click a role to reveal its biodata in a modal
-  const bioModal = document.getElementById('bioModal');
-  const rankItems = document.querySelectorAll('.rank-item');
-  if (bioModal && rankItems.length) {
-    const roleEl = document.getElementById('bioModalRole');
-    const titleEl = document.getElementById('bioModalTitle');
-    const nameEl = document.getElementById('bioModalName');
-    const sinceEl = document.getElementById('bioModalSince');
-    const bioEl = document.getElementById('bioModalBio');
-    const tasksEl = document.getElementById('bioModalTasks');
+  // Detail modal — used on Organization, Partnership, and News pages.
+  // Any element with class "detail-trigger" opens the shared #detailModal,
+  // populated from its data-* attributes.
+  const detailModal = document.getElementById('detailModal');
+  const triggers = document.querySelectorAll('.detail-trigger');
+  if (detailModal && triggers.length) {
+    const eyebrowEl = document.getElementById('detailModalEyebrow');
+    const titleEl = document.getElementById('detailModalTitle');
+    const meta1Wrap = document.getElementById('detailModalMeta1');
+    const meta1LabelEl = document.getElementById('detailModalMeta1Label');
+    const meta1ValueEl = document.getElementById('detailModalMeta1Value');
+    const meta2Wrap = document.getElementById('detailModalMeta2');
+    const meta2LabelEl = document.getElementById('detailModalMeta2Label');
+    const meta2ValueEl = document.getElementById('detailModalMeta2Value');
+    const bodyEl = document.getElementById('detailModalBody');
+    const listWrap = document.getElementById('detailModalListWrap');
+    const listLabelEl = document.getElementById('detailModalListLabel');
+    const listEl = document.getElementById('detailModalList');
     let lastFocused = null;
 
-    const openBio = (item) => {
-      roleEl.textContent = item.dataset.role || '';
+    const fillMeta = (wrap, labelEl, valueEl, label, value) => {
+      if (label && value) {
+        labelEl.textContent = label;
+        valueEl.textContent = value;
+        wrap.classList.remove('is-hidden');
+      } else {
+        wrap.classList.add('is-hidden');
+      }
+    };
+
+    const openDetail = (item) => {
+      eyebrowEl.textContent = item.dataset.eyebrow || '';
       titleEl.textContent = item.dataset.title || '';
-      nameEl.textContent = item.dataset.name || '—';
-      sinceEl.textContent = item.dataset.since || '—';
-      bioEl.textContent = item.dataset.bio || '';
-      tasksEl.innerHTML = '';
-      (item.dataset.tasks || '').split('|').filter(Boolean).forEach(task => {
-        const li = document.createElement('li');
-        li.textContent = task.trim();
-        tasksEl.appendChild(li);
-      });
+      fillMeta(meta1Wrap, meta1LabelEl, meta1ValueEl, item.dataset.meta1Label, item.dataset.meta1Value);
+      fillMeta(meta2Wrap, meta2LabelEl, meta2ValueEl, item.dataset.meta2Label, item.dataset.meta2Value);
+      bodyEl.textContent = item.dataset.body || '';
+      const listItems = (item.dataset.list || '').split('|').map(s => s.trim()).filter(Boolean);
+      listEl.innerHTML = '';
+      if (listItems.length) {
+        listLabelEl.textContent = item.dataset.listLabel || '';
+        listItems.forEach(entry => {
+          const li = document.createElement('li');
+          li.textContent = entry;
+          listEl.appendChild(li);
+        });
+        listWrap.classList.remove('is-hidden');
+      } else {
+        listWrap.classList.add('is-hidden');
+      }
       lastFocused = document.activeElement;
-      bioModal.classList.add('is-open');
-      bioModal.setAttribute('aria-hidden', 'false');
-      bioModal.querySelector('.bio-modal-close').focus();
+      detailModal.classList.add('is-open');
+      detailModal.setAttribute('aria-hidden', 'false');
+      detailModal.querySelector('.detail-modal-close').focus();
       document.body.style.overflow = 'hidden';
     };
 
-    const closeBio = () => {
-      bioModal.classList.remove('is-open');
-      bioModal.setAttribute('aria-hidden', 'true');
+    const closeDetail = () => {
+      detailModal.classList.remove('is-open');
+      detailModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       if (lastFocused) lastFocused.focus();
     };
 
-    rankItems.forEach(item => {
-      item.addEventListener('click', () => openBio(item));
+    triggers.forEach(item => {
+      item.addEventListener('click', () => openDetail(item));
       item.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openBio(item);
+          openDetail(item);
         }
       });
     });
 
-    bioModal.querySelectorAll('[data-close]').forEach(el => {
-      el.addEventListener('click', closeBio);
+    detailModal.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', closeDetail);
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && bioModal.classList.contains('is-open')) closeBio();
+      if (e.key === 'Escape' && detailModal.classList.contains('is-open')) closeDetail();
     });
   }
 });
