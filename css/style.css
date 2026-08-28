@@ -126,6 +126,8 @@ section .eyebrow.on-paper::before{background:var(--orange-dark);}
 .partner-card{
   position:relative;
 }
+.detail-trigger{cursor:pointer;}
+.detail-trigger:focus-visible{outline:2px solid var(--yellow);outline-offset:3px;}
 .quick-card::before,.quick-card::after,
 .partner-card::before,.partner-card::after{
   content:"";
@@ -1023,8 +1025,8 @@ footer{
   .rank-item{gap:16px;}
 }
 
-/* ---------- BIODATA MODAL (organization page) ---------- */
-.bio-modal{
+/* ---------- DETAIL MODAL (organization / partnership / news) ---------- */
+.detail-modal{
   position:fixed;
   inset:0;
   z-index:300;
@@ -1036,14 +1038,14 @@ footer{
   visibility:hidden;
   transition:opacity .25s ease, visibility .25s ease;
 }
-.bio-modal.is-open{opacity:1;visibility:visible;}
-.bio-modal-backdrop{
+.detail-modal.is-open{opacity:1;visibility:visible;}
+.detail-modal-backdrop{
   position:absolute;
   inset:0;
   background:rgba(31,59,82,0.55);
   backdrop-filter:blur(2px);
 }
-.bio-modal-panel{
+.detail-modal-panel{
   position:relative;
   background:var(--card);
   max-width:480px;
@@ -1056,8 +1058,8 @@ footer{
   transform:translateY(18px) scale(0.98);
   transition:transform .25s ease;
 }
-.bio-modal.is-open .bio-modal-panel{transform:translateY(0) scale(1);}
-.bio-modal-close{
+.detail-modal.is-open .detail-modal-panel{transform:translateY(0) scale(1);}
+.detail-modal-close{
   position:absolute;
   top:16px;right:16px;
   width:34px;height:34px;
@@ -1070,8 +1072,8 @@ footer{
   cursor:pointer;
   transition:background .2s ease, color .2s ease;
 }
-.bio-modal-close:hover{background:var(--orange);color:var(--white);}
-.bio-modal-role{
+.detail-modal-close:hover{background:var(--orange);color:var(--white);}
+.detail-modal-eyebrow{
   font-family:var(--font-mono);
   font-size:0.68rem;
   letter-spacing:0.18em;
@@ -1079,12 +1081,12 @@ footer{
   color:var(--orange-dark);
   margin-bottom:8px;
 }
-.bio-modal-panel h3{
+.detail-modal-panel h3{
   font-size:1.6rem;
   color:var(--ink);
   margin-bottom:20px;
 }
-.bio-modal-meta{
+.detail-modal-meta{
   display:flex;
   gap:28px;
   flex-wrap:wrap;
@@ -1093,27 +1095,28 @@ footer{
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
-.bio-modal-meta div{display:flex;flex-direction:column;gap:4px;}
-.bio-modal-meta span{
+.detail-modal-meta div{display:flex;flex-direction:column;gap:4px;}
+.detail-modal-meta div.is-hidden{display:none;}
+.detail-modal-meta span{
   font-family:var(--font-mono);
   font-size:0.62rem;
   letter-spacing:0.12em;
   text-transform:uppercase;
   color:var(--steel);
 }
-.bio-modal-meta strong{
+.detail-modal-meta strong{
   font-family:var(--font-display);
   font-size:0.95rem;
   color:var(--ink);
   text-transform:uppercase;
   font-weight:600;
 }
-.bio-modal-panel > p{
+.detail-modal-panel > p{
   color:var(--ink-soft);
   font-size:0.94rem;
   margin-bottom:22px;
 }
-.bio-modal-tasks-label{
+.detail-modal-list-label{
   display:block;
   font-family:var(--font-mono);
   font-size:0.62rem;
@@ -1122,15 +1125,15 @@ footer{
   color:var(--orange-dark);
   margin-bottom:12px;
 }
-.bio-modal-tasks ul{display:flex;flex-direction:column;gap:9px;}
-.bio-modal-tasks li{
+.detail-modal-list ul{display:flex;flex-direction:column;gap:9px;}
+.detail-modal-list li{
   display:flex;
   gap:10px;
   font-size:0.9rem;
   color:var(--ink-soft);
   align-items:flex-start;
 }
-.bio-modal-tasks li::before{
+.detail-modal-list li::before{
   content:"";
   flex-shrink:0;
   width:7px;height:7px;
@@ -1138,6 +1141,6 @@ footer{
   background:var(--yellow);
 }
 @media (max-width:560px){
-  .bio-modal-panel{padding:30px 22px 26px;}
-  .bio-modal-meta{gap:18px;}
+  .detail-modal-panel{padding:30px 22px 26px;}
+  .detail-modal-meta{gap:18px;}
 }
